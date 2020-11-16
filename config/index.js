@@ -1,5 +1,3 @@
-'use strict';
-
 const database = require('./config');
 const logs = require('./logs');
 const locale = require('./locale');

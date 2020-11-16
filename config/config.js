@@ -1,4 +1,3 @@
-'use strict';
 // read everything from environment
 const configs = {
   username: 'root',

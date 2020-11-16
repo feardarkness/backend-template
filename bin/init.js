@@ -1,28 +1,17 @@
 #!/usr/bin/env node
-const app = require('../app');
-var debug = require('debug')('<%- name %>:server');
-
 const http = require('http');
+const debug = require('debug')('<%- name %>:server');
 
-const port = normalizePort(process.env.PORT || '3000');
-app.set('port', port);
-
-console.log('aaaaaaaaa');
-
-const server = http.createServer(app);
-
-server.listen(port);
-server.on('error', onError);
-server.on('listening', onListening);
+const app = require('../app');
 
 /**
  * Normalize a port into a number, string, or false.
  */
 
 function normalizePort(val) {
-  var port = parseInt(val, 10);
+  const port = parseInt(val, 10);
 
-  if (isNaN(port)) {
+  if (Number.isNaN(port)) {
     // named pipe
     return val;
   }
@@ -48,7 +37,7 @@ function onError(error) {
     throw error;
   }
 
-  var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+  const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
   // handle specific listen errors with friendly messages
   switch (error.code) {
@@ -75,3 +64,14 @@ function onListening() {
   debug('Listening on ' + bind);
   console.log('Listening on ' + bind);
 }
+
+const port = normalizePort(process.env.PORT || '3000');
+app.set('port', port);
+
+console.log('aaaaaaaaa');
+
+const server = http.createServer(app);
+
+server.listen(port);
+server.on('error', onError);
+server.on('listening', onListening);

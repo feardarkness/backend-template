@@ -1,0 +1,16 @@
+{
+  "extends": ["airbnb-base", "prettier", "plugin:security/recommended", "plugin:unicorn/recommended"],
+  "plugins": ["security", "unicorn"],
+  "rules": {
+    "unicorn/prevent-abbreviations": [
+        "error",
+        {
+            "whitelist": {
+                "err": true,
+                "req": true,
+                "res": true
+            }
+        }
+    ]
+}
+}

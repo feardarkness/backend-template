@@ -6,6 +6,7 @@
   "scripts": {
     "start": "pm2-runtime start ecosystem.config.js --env production",
     "dev": "nodemon ./bin/init.js",
+    "eslint": "eslint config/**/* components/**/* bin/**/* lib/**/* migrations/**/* models/**/* seeders/**/* app.js",
     "test": "mocha"
   },
   "engines": {
@@ -23,10 +24,13 @@
   "homepage": "https://github.com/feardarkness/bet-backend#readme",
   "dependencies": {
     "@sentry/node": "^5.27.3",
+    "body-parser": "^1.19.0",
     "bunyan": "^1.8.14",
     "cls-hooked": "^4.2.2",
+    "debug": "^4.2.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "helmet": "^4.2.0",
     "luxon": "^1.25.0",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.6",
@@ -38,6 +42,12 @@
     "uuid": "^8.3.1"
   },
   "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-unicorn": "^23.0.0",
     "sequelize-cli": "^6.2.0"
   }
 }

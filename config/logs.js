@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = {
   logsPath: process.env.LOG_PATH || 'logs',
   fileLog: {
