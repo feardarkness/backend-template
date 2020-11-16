@@ -1,13 +1,8 @@
-// read everything from environment
-const configs = {
+// TODO read from environment
+module.exports = {
   username: 'root',
-  password: null,
+  password: 'asdsadsa',
   database: 'database_development',
   host: '127.0.0.1',
   dialect: 'mysql',
-};
-module.exports = {
-  development: configs,
-  test: configs,
-  production: configs,
 };
