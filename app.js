@@ -42,7 +42,13 @@ app.disable('x-powered-by');
 
 // START LIMITS ------------------------------------------------------------------------------
 // setting limits on payload
-app.use(express.urlencoded({ limit: '1kb' })); // limit url encoded content
+app.use(
+  bodyParser.urlencoded({
+    limit: '1kb',
+    extended: true,
+  })
+); // limit url encoded content
+
 app.use(
   bodyParser.json({
     limit: '1kb',
